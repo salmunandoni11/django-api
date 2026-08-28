@@ -4,7 +4,7 @@ import { courseApi, weatherApi } from './api'
 
 const empty = { title: '', slug: '', description: '', instructor: '', category: 'Development', level: 'Beginner', duration: '4 minggu', price: 0, image_url: '', is_published: true }
 const money = new Intl.NumberFormat('id-ID', { style: 'currency', currency: 'IDR', maximumFractionDigits: 0 })
-
+/* test */
 function App() {
   const [courses, setCourses] = useState([]); const [form, setForm] = useState(empty); const [editing, setEditing] = useState(null)
   const [query, setQuery] = useState(''); const [loading, setLoading] = useState(true); const [error, setError] = useState('')

@@ -32,3 +32,10 @@ export const weatherApi = {
     return request(url)
   }
 }
+
+export const chatApi = {
+  ask: (question) => request('http://127.0.0.1:8000/api/chat/', {
+    method: 'POST',
+    body: JSON.stringify({ question }),
+  }),
+}

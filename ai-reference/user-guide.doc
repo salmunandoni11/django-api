@@ -1,0 +1,51 @@
+# User Guide Kursus Studio
+
+## Tentang aplikasi
+Kursus Studio adalah aplikasi untuk mengelola katalog kursus. Pengguna dapat melihat daftar kursus, mencari kursus, menambah kursus baru, mengubah data kursus, menghapus kursus, dan mengatur apakah kursus sedang dipublikasikan.
+
+## Membuka aplikasi
+1. Jalankan backend Django pada port 8000.
+2. Jalankan frontend React/Vite pada port 5173.
+3. Buka `http://127.0.0.1:5173/` melalui browser.
+
+## Melihat katalog kursus
+Daftar kursus tampil pada bagian **Semua kursus**. Setiap kartu kursus menampilkan judul, kategori, level, deskripsi, harga, durasi, dan status publikasi.
+
+## Mencari kursus
+1. Temukan kotak **Cari kursus...** di bagian katalog.
+2. Masukkan kata kunci judul, deskripsi, instruktur, atau kategori.
+3. Tekan Enter untuk menampilkan hasil pencarian.
+
+## Menambah kursus
+1. Isi formulir **Tambah kursus**.
+2. Masukkan judul kursus dan instruktur.
+3. Isi kategori, durasi, harga, level, dan deskripsi.
+4. Tekan **Terbitkan kursus**.
+5. Kursus baru akan muncul di katalog.
+
+## Mengedit kursus
+1. Tekan tombol **Edit** pada kartu kursus.
+2. Perbarui data pada formulir.
+3. Tekan **Simpan perubahan**.
+4. Untuk membatalkan, tekan tombol X pada judul formulir.
+
+## Mengubah status publikasi
+Tekan tombol **Live** atau **Draft** pada kartu kursus. Status **Live** berarti kursus dipublikasikan, sedangkan **Draft** berarti kursus belum dipublikasikan.
+
+## Menghapus kursus
+1. Tekan tombol **Hapus** pada kartu kursus.
+2. Konfirmasi penghapusan pada dialog browser.
+3. Kursus akan dihapus dari katalog.
+
+## Melihat cuaca
+Pada bagian **Cuaca**, masukkan nama kota. Aplikasi akan menampilkan suhu, deskripsi cuaca, kelembapan, dan kecepatan angin. Fitur ini membutuhkan API key cuaca yang dikonfigurasi di file `.env`.
+
+## Menggunakan chatbot
+1. Buka bagian **Chat dengan user guide**.
+2. Ketik pertanyaan tentang cara penggunaan aplikasi.
+3. Tekan tombol kirim atau Enter.
+4. Chatbot mencari jawaban dari dokumen user guide pada folder `ai-reference`.
+5. Nama file sumber jawaban ditampilkan di bawah respons chatbot.
+
+## Catatan
+Chatbot ini menggunakan pencarian teks lokal, bukan model AI online. Jika pertanyaan tidak ditemukan dalam user guide, chatbot akan memberi tahu bahwa jawabannya belum tersedia di sumber referensi.

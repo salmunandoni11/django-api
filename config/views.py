@@ -1,4 +1,8 @@
 from django.http import JsonResponse
+from django.views.decorators.csrf import csrf_exempt
+import json
+
+from .chatbot import answer_from_references
 
 
 def api_home(request):
@@ -8,6 +12,23 @@ def api_home(request):
         "courses": "/api/courses/",
         "admin": "/admin/",
     })
+
+
+@csrf_exempt
+def chat(request):
+    if request.method != "POST":
+        return JsonResponse({"error": "Gunakan method POST."}, status=405)
+
+    try:
+        payload = json.loads(request.body or "{}")
+    except json.JSONDecodeError:
+        return JsonResponse({"error": "Body harus berupa JSON yang valid."}, status=400)
+
+    question = str(payload.get("question", "")).strip()
+    if not question:
+        return JsonResponse({"error": "Pertanyaan wajib diisi."}, status=400)
+
+    return JsonResponse(answer_from_references(question))
 
 # ---------------------------------------------------------------------------
 # Weather endpoint

@@ -3,3 +3,9 @@ djangorestframework>=3.15,<4.0
 django-cors-headers>=4.4,<5.0
 requests
 python-dotenv
+
+# Added for production/Docker
+gunicorn
+dj-database-url
+psycopg2-binary
+whitenoise

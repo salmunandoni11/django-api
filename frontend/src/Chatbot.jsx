@@ -4,7 +4,7 @@ import { chatApi } from './api'
 
 export default function Chatbot() {
   const [messages, setMessages] = useState([
-    { role: 'bot', text: 'Halo! Tanyakan sesuatu berdasarkan user guide.' },
+    { role: 'bot', text: 'Halo! Tanyakan sesuatu berdasarkan tentang kursus studio.' },
   ])
   const [question, setQuestion] = useState('')
   const [loading, setLoading] = useState(false)
@@ -32,9 +32,9 @@ export default function Chatbot() {
   }
 
   return <div className={`chatbot-widget ${open ? 'is-open' : ''}`}>
-    {open && <section className="chatbot" aria-label="Chat dengan user guide">
+    {open && <section className="chatbot" aria-label="Chat dengan Virtual Assistant">
       <div className="chatbot-heading">
-        <div><p className="eyebrow">AI REFERENCE ASSISTANT</p><h2>Chat dengan user guide</h2></div>
+        <div><p className="eyebrow">AI REFERENCE ASSISTANT</p><h2>Chat dengan Virtual Assistant Kursus Studio</h2></div>
         <button className="chatbot-close" onClick={() => setOpen(false)} aria-label="Tutup chatbot"><X size={19} /></button>
       </div>
       <div className="chat-messages" aria-live="polite">
